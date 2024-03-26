@@ -11,6 +11,9 @@ migrate = Migrate(app, db)
 
 db.init_app(app)
 
+@app.route('/')
+def home():
+    return "welcome to Back-end"
 @app.route("/customers", methods=['GET', 'POST'])
 def customers():
     if request.method == 'GET':
